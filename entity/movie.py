@@ -1,8 +1,8 @@
 from entity.event import Event
 
 class Movie(Event):
-    def __init__(self, event_id=None, event_name=None, event_date=None, event_time=None, venue_name=None, total_seats=0, available_seats=0, ticket_price=0.0, event_type=None, genre=None, actor_name=None, actress_name=None):
-        super().__init__(event_id, event_name, event_date, event_time, venue_name, total_seats, available_seats, ticket_price, event_type)
+    def __init__(self, event_id=None, event_name=None, event_date=None, event_time=None, venue_id=None, total_seats=0, available_seats=0, ticket_price=0.0, event_type=None, genre=None, actor_name=None, actress_name=None):
+        super().__init__(event_id, event_name, event_date, event_time, venue_id, total_seats, available_seats, ticket_price, event_type)
         self.__genre = genre
         self.__actor_name = actor_name
         self.__actress_name = actress_name
@@ -30,3 +30,5 @@ class Movie(Event):
         child_details = f"Genre: {self.__genre}, Actor Name: {self.__actor_name}, Actress Name: {self.__actress_name}\n"
         return parent_details + child_details
 
+#obj = Movie(1,"name","2100","12:00","1",20,20,120.00,"movie","horror","aa","bb")
+#print(obj.getGenre())

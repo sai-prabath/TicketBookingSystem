@@ -1,8 +1,8 @@
 from entity.event import Event
 
 class Sports(Event):
-    def __init__(self, event_id=None, event_name=None, event_date=None, event_time=None, venue_name=None, total_seats=0, available_seats=0, ticket_price=0.0, event_type=None, sport_name=None, teams_name=None):
-        super().__init__(event_id, event_name, event_date, event_time, venue_name, total_seats, available_seats, ticket_price, event_type)
+    def __init__(self, event_id=None, event_name=None, event_date=None, event_time=None, venue_id=None, total_seats=0, available_seats=0, ticket_price=0.0, event_type=None, sport_name=None, teams_name=None):
+        super().__init__(event_id, event_name, event_date, event_time, venue_id, total_seats, available_seats, ticket_price, event_type)
         self.__sport_name = sport_name
         self.__teams_name = teams_name
 

@@ -1,11 +1,11 @@
 class Event:
-    def __init__(self, event_id=None, event_name=None, event_date=None, event_time=None, venue_name=None, total_seats=0,
+    def __init__(self, event_id=None, event_name=None, event_date=None, event_time=None, venue_id=None, total_seats=0,
                  available_seats=0, ticket_price=0.0, event_type=None):
         self.__event_id = event_id
         self.__event_name = event_name
         self.__event_date = event_date
         self.__event_time = event_time
-        self.__venue_name = venue_name
+        self.__venue_id = venue_id
         self.__total_seats = total_seats
         self.__available_seats = available_seats
         self.__ticket_price = ticket_price
@@ -33,11 +33,11 @@ class Event:
     def setEventTime(self, event_time):
         self.__event_time = event_time
 
-    def getVenueName(self):
-        return self.__venue_name
+    def getVenueID(self):
+        return self.__venue_id
 
-    def setVenueName(self, venue_name):
-        self.__venue_name = venue_name
+    def setVenueID(self, venue_id):
+        self.__venue_id = venue_id
 
     def getTotalSeats(self):
         return self.__total_seats
@@ -71,16 +71,12 @@ class Event:
         return self.__total_seats - self.__available_seats
 
     def book_tickets(self, num_tickets):
-        if num_tickets <= self.__available_seats:
-            self.__available_seats -= num_tickets
-        else:
-            print("Not enough available seats to book.")
+        self.__available_seats -= num_tickets
 
     def cancel_booking(self, num_tickets):
-        if num_tickets <= (self.__total_seats - self.__available_seats):
-            self.__available_seats += num_tickets
-        else:
-            print("Cannot cancel more tickets than booked.")
+        self.__available_seats += num_tickets
+
 
     def __str__(self):
-        return f"Event ID: {self.__event_id}\nEvent Name: {self.__event_name}, Event Date: {self.__event_date}, Event Time: {self.__event_time}\nVenue Name: {self.__venue_name}, Total Seats: {self.__total_seats}, Available Seats: {self.__available_seats}\nTicket Price: {self.__ticket_price}, Event Type: {self.__event_type}\n"
+        return f"Event ID: {self.__event_id}\nEvent Name: {self.__event_name}, Event Date: {self.__event_date}, Event Time: {self.__event_time}\nVenue Name: {self.__venue_id}, Total Seats: {self.__total_seats}, Available Seats: {self.__available_seats}\nTicket Price: {self.__ticket_price}, Event Type: {self.__event_type}\n"
+

@@ -1,10 +1,10 @@
 class Booking:
-    def __init__(self, booking_id=None, event_id=None, customer_id=None, num_tickets=0,total_cost=0,booking_date=None,event=None):
+    def __init__(self, booking_id=None, customer_id=None, event_id=None, num_tickets=0,total_cost=0,booking_date=None,event=None):
         self.__booking_id = booking_id
         self.__event_id = event_id
         self.__customer_id = customer_id
         self.__num_tickets = num_tickets
-        if total_cost == 0:
+        if total_cost == 0 or total_cost == None:
             self.__total_cost = event.getTicketPrice() * num_tickets
         else:
             self.__total_cost = total_cost
@@ -44,4 +44,4 @@ class Booking:
         self.__booking_date = booking_date
 
     def __str__(self):
-        return f"Booking ID: {self.__booking_id}\nCustomer id: {self.__customer_id}\nEvent id: {self.__event_id}\nNumber of Tickets: {self.__num_tickets}, Total Cost: {self.__total_cost}, Date: {self.__booking_date}\n"
+        return f"Booking ID: {self.__booking_id}\nCustomer id: {self.__customer_id} Event id: {self.__event_id}\nNumber of Tickets: {self.__num_tickets}, Total Cost: {self.__total_cost}, Date: {self.__booking_date}\n"
